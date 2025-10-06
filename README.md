@@ -1,4 +1,4 @@
-Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OSD.  1.5 amplitude, 2.5 exponent, 0 offset. Commented out values are for subtractive gamma correction on 20 img which gamma is too high. Pathology off of 20 image from OSD user SinPool, tiles removed from this can download or replace.
+Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OSD.  1.5 amplitude, 2.5 exponent, 0 offset. Commented out values are for subtractive gamma correction on 20 img which gamma is too high. Pathology off of 20.dzi image from OSD user SinPool, tiles removed from this can download or replace.
 
 Gamma Correction (involves math)
 https://en.wikipedia.org/wiki/Gamma_correction
@@ -6,9 +6,9 @@ https://en.wikipedia.org/wiki/Gamma_correction
 feComponentTransfer SVG Filters (CSS part)
 https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer
 
-Example in operation, video and unfiltered pic (caddyCrop.jpg) also in repo:
+Example in operation, video and unfiltered pic (caddy_crop.jpg) also in repo:
 
 https://github.com/user-attachments/assets/8eec6263-8264-4804-829e-df7db811ddc5
 
-Using OSD and 20 in OSD discord user SinPool's github repo. This is gamma subtracted (1.5 amplitude , 2.5 exponent , 0 offset) :
+Using OSD and 20.dzi and tiles in OSD discord user SinPool's github repo. This is gamma subtracted (1.5 amplitude , 2.5 exponent , 0 offset) :
 [PLACEHOLDER - REDUCE VIDEO SIZE]
