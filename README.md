@@ -1,6 +1,6 @@
-Demo of pure CSS filters for gamma in OSD
+Demo of pure CSS filters (specifically SVG filters) for gamma in OSD
 
-Pathology off of 20 image from OSD user, tiles removed from this can download or replace.
+Pathology off of 20 image from OSD user SinPool, tiles removed from this can download or replace.
 
 Example in operation, video also in repo:
 
