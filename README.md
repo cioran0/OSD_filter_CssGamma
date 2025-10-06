@@ -1,4 +1,4 @@
-Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OSD.  1.5 amplitude, 2.5 exponent, 0 offset (can be changed). Commented out values (.5, .5, 0 iirc) are for subtractive gamma correction on 20.dzi which gamma is too high. Pathology off of second image from OSD user github: sinamcr7 provided, tiles removed from this can be downloaded or replaced. Credit me if you use this code.
+Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OSD.  This applies an SVG gamma filter to the whole canvas using CSS filters and filter url to apply SVG filters. 1.5 amplitude, 2.5 exponent, 0 offset (can be changed). Commented out values (.5, .5, 0 iirc) are for subtractive gamma correction on 20.dzi which gamma is too high. Pathology off of second image from OSD user github: sinamcr7 provided, tiles removed from this can be downloaded or replaced. Credit me if you use this code.
 
 ### Related resources:
 * Gamma Correction (involves math): https://en.wikipedia.org/wiki/Gamma_correction
