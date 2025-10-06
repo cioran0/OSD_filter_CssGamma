@@ -6,7 +6,7 @@ Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OS
 * transfer function element attributes: https://drafts.fxtf.org/filter-effects/#feFuncRElement
 * For gamma, the function is defined by the following exponential function: C' = amplitude * pow(C, exponent) + offset
 
-Example in operation, video and unfiltered pic (caddy_crop.jpg) also in repo:
+Example in operation, video and unfiltered pic (caddy_crop.jpg) also in repo (non-OSD):
 
 https://github.com/user-attachments/assets/8eec6263-8264-4804-829e-df7db811ddc5
 
