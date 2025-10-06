@@ -8,7 +8,8 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTr
 
 transfer function element attributes
 https://drafts.fxtf.org/filter-effects/#feFuncRElement
-For gamma, the function is defined by the following exponential function: C' = amplitude * pow(C, exponent) + offset
+For gamma, the function is defined by the following exponential function: 
+C' = amplitude * pow(C, exponent) + offset
 
 
 Example in operation, video and unfiltered pic (caddy_crop.jpg) also in repo:
