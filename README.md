@@ -6,6 +6,11 @@ https://en.wikipedia.org/wiki/Gamma_correction
 feComponentTransfer SVG Filters (CSS part)
 https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer
 
+transfer function element attributes
+https://drafts.fxtf.org/filter-effects/#feFuncRElement
+For gamma, the function is defined by the following exponential function: C' = amplitude * pow(C, exponent) + offset
+
+
 Example in operation, video and unfiltered pic (caddy_crop.jpg) also in repo:
 
 https://github.com/user-attachments/assets/8eec6263-8264-4804-829e-df7db811ddc5
