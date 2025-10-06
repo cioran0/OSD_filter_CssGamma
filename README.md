@@ -1,7 +1,6 @@
 Demo of pure CSS filters (specifically SVG filters) for gamma (correction) in OSD.  1.5 amplitude, 2.5 exponent, 0 offset. Commented out values are for subtractive gamma correction on 20 img which gamma is too high. Pathology off of 20.dzi image from OSD user SinPool, tiles removed from this can download or replace.
 
-###Related resources:
-
+### Related resources:
 * Gamma Correction (involves math): https://en.wikipedia.org/wiki/Gamma_correction
 * feComponentTransfer SVG Filters (CSS part): https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer
 * transfer function element attributes: https://drafts.fxtf.org/filter-effects/#feFuncRElement
