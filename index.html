@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gamma Correct Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style> 
+      #openseadragon1 {
+                    width: 100%;
+                    height: 50vh;
+                }
+      /* Apply SVG gamma filter to OpenSeadragon canvas when container has class 'filteredGamma' */
+      #openseadragon1.filteredGamma canvas {
+        filter: url('#gamma');
+      }
+      /* Note: Modern browsers like Chrome/Edge now support SVG filters on canvas elements. */
+      h1 { 
+          color:green; 
+      } 
+      body { 
+          text-align:center; 
+      } 
+      .sep{ 
+          filter: sepia(0%);
+      } 
+      .huer{
+          filter:hue-rotate(0deg);   
+      }
+      .otherF{
+          filter:saturate(100%); 
+          filter:contrast(100%);
+          filter:brightness(100%);
+      }   
+      .toggle-switch {
+        background: #ccc;
+        width: 80px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 3px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      
+      .toggle-switch:after {
+        content: " ";
+        display: block;
+        width: 40px;
+        height: 30px;
+        background-color: #3498DB;
+        border: 3px solid #fff;
+        border-top: 0;
+        border-bottom: 0;
+        margin-left: -3px;
+        transition: all 0.1s ease-in-out;
+      }
+      
+      .active .toggle-switch:after {
+        margin-left: 40px;
+      }
+      
+      .toggle-label {
+        display: inline-block;
+        line-height: 30px;
+        color: grey; /* default color for toggle-label */
+      }
+      
+      .active .toggle-label {
+        color: #3498DB;
+      }
+  </style> 
+  </head>
+  <body>
+    <div class="row"></div>
+  <!-- Button for TOGGLE GRAYSCALE-->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const toggleSwitch = document.querySelector('.toggle-switch');
+
+    function toggleHandler(event) {
+      event.preventDefault();
+      event.currentTarget.parentElement.classList.toggle('active');
+      console.log("SWITCHED");
+      // Toggle filter class on the OpenSeadragon container to apply CSS/SVG filter to its canvas
+      document.getElementById('openseadragon1').classList.toggle('filteredGamma');
+      
+      // Get references to the SVG filter elements
+      const feFuncR = document.querySelector('#gamma feFuncR');
+      const feFuncG = document.querySelector('#gamma feFuncG');
+      const feFuncB = document.querySelector('#gamma feFuncB');
+
+      if(feFuncR.getAttribute('exponent') == '1')
+        {
+          console.log("SWITCH IN IF");
+          ///*
+          // Modify feComponentTransfer values for colorized state
+          feFuncR.setAttribute('exponent', '1.5');
+          feFuncR.setAttribute('amplitude', '2.5');
+          feFuncR.setAttribute('offset', '0');
+          
+          feFuncG.setAttribute('exponent', '1.5');
+          feFuncG.setAttribute('amplitude', '2.5');
+          feFuncG.setAttribute('offset', '0.00');
+          
+          feFuncB.setAttribute('exponent', '1.5');
+          feFuncB.setAttribute('amplitude', '2.5');
+          feFuncB.setAttribute('offset', '0');
+          //*/
+         //updateGammaValues(.5, .5, 0, .5, .5, 0, .5, .5, 0);
+        }
+      else{
+           console.log("SWITCH IN ELSE");          
+          // Reset feComponentTransfer values to default (1,1,0)
+          feFuncR.setAttribute('exponent', '1');
+          feFuncR.setAttribute('amplitude', '1');
+          feFuncR.setAttribute('offset', '0');
+          
+          feFuncG.setAttribute('exponent', '1');
+          feFuncG.setAttribute('amplitude', '1');
+          feFuncG.setAttribute('offset', '0');
+          
+          feFuncB.setAttribute('exponent', '1');
+          feFuncB.setAttribute('amplitude', '1');
+          feFuncB.setAttribute('offset', '0');
+        }
+    }
+
+    // Function to dynamically change feComponentTransfer values
+    function updateGammaValues(rExp, rAmp, rOff, gExp, gAmp, gOff, bExp, bAmp, bOff) {
+      const feFuncR = document.querySelector('#gamma feFuncR');
+      const feFuncG = document.querySelector('#gamma feFuncG');
+      const feFuncB = document.querySelector('#gamma feFuncB');
+      
+      feFuncR.setAttribute('exponent', rExp);
+      feFuncR.setAttribute('amplitude', rAmp);
+      feFuncR.setAttribute('offset', rOff);
+      
+      feFuncG.setAttribute('exponent', gExp);
+      feFuncG.setAttribute('amplitude', gAmp);
+      feFuncG.setAttribute('offset', gOff);
+      
+      feFuncB.setAttribute('exponent', bExp);
+      feFuncB.setAttribute('amplitude', bAmp);
+      feFuncB.setAttribute('offset', bOff);
+    }
+
+    // Example: Call this function to set custom values
+    // updateGammaValues(1.2, 1.5, 0.1, 1.1, 1.3, 0.05, 0.9, 1.2, 0);
+
+    toggleSwitch.addEventListener('click', toggleHandler);
+
+    });
+    </script>
+  <div class="justify-content-center">
+    <div id="openseadragon1" alt="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
+    <script type="text/javascript">
+      var viewer = OpenSeadragon({
+        id: "openseadragon1",
+        prefixUrl: "./images/",
+        tileSources: "./20/20.dzi"
+    });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <svg height="0">
+      <filter id="gamma">
+        <feComponentTransfer>
+          <!-- Default Gamma with 1,1,0 values (identity transform) -->
+          <feFuncR type="gamma" exponent="1" amplitude="1" offset="0" />
+          <feFuncG type="gamma" exponent="1" amplitude="1" offset="0" />
+          <feFuncB type="gamma" exponent="1" amplitude="1" offset="0" />
+        </feComponentTransfer>
+      </filter>
+    </svg></div>
+    </div>
+    <div class="toggle">
+      <div class="toggle-label">Original</div>
+      <div class="toggle-switch"></div>
+      <div class="toggle-label active">Gamma Correct</div>
+    </div>
+<!--END TOGGLE GRAYSCALE BUTTON-->
+  </body>
+</html>
+

@@ -1,0 +1,27 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>DZI Viewer</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
+            <style>
+                #openseadragon1 {
+                    width: 100%;
+                    height: 100vh;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="openseadragon1"></div>
+            <script>
+                var viewer = OpenSeadragon({
+                    id: "openseadragon1",
+                    prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/images/",
+                    showRotationControl: true,
+                    tileSources: "20.dzi"
+                });
+            </script>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        
