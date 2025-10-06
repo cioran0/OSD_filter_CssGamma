@@ -6,7 +6,7 @@ https://en.wikipedia.org/wiki/Gamma_correction
 feComponentTransfer SVG Filters (CSS part)
 https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer
 
-Example in operation, video also in repo:
+Example in operation, video and unfiltered pic (caddyCrop.jpg) also in repo:
 
 https://github.com/user-attachments/assets/8eec6263-8264-4804-829e-df7db811ddc5
 
